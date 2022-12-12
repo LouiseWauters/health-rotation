@@ -1,0 +1,10 @@
+<div *ngIf="ready; else noForm">
+  <app-food-item-list [foodItemList]="{title: 'Recommendations', foodItems: items, selected: []}" (selected)="changeSelected($event)"></app-food-item-list>
+</div>
+<ng-template #noForm>
+  <app-load-spinner></app-load-spinner>
+</ng-template>
+<div class="button-container">
+  <button class="button" (click)="loadNewRecommendations()">Try again</button>
+  <button class="button" [routerLink]="''">Back</button>
+</div>

@@ -1,0 +1,4 @@
+<h3>{{foodItemList.title}}</h3>
+<div id="{{foodItemList.title}}FoodItemList" class="food-item-container">
+  <app-food-item *ngFor="let item of foodItemList.foodItems" [foodItem]="item" (wasSelected)="changeSelected($event)"></app-food-item>
+</div>

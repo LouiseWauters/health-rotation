@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit(form.value.date)">
+  <input type="date" formControlName="date">
+  <p>Select anything that you have eaten on this day:</p>
+  <app-food-items-by-group (selectedItems)="changeSelected($event)" (itemsLoaded)="setReady()"></app-food-items-by-group>
+  <br>
+  <div class="button-container">
+    <button *ngIf="ready" class="button" type="submit">Submit</button>
+    <button class="button" type="button" (click)="clearSelected()">Clear</button>
+    <button class="button" type="button" [routerLink]="'recommendations'">Recommendations</button>
+  </div>
+</form>
+

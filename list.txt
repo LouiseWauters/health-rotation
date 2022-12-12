@@ -1,0 +1,232 @@
+VEGETABLES
+aardappel
+aardpeer
+baobab
+alfalfa
+andijvie
+artisjok
+asperge
+aubergine
+augurk
+bamboe
+bieslook
+biet
+bindsla
+bleekselderij
+bloemkool
+boerenkool
+bosui
+brandnetel
+broccoli
+broccolini
+cassave
+chilipeper
+chinese kool
+citroengras
+courgette
+erwten
+eikenbladsla
+flespompoen
+groene kool
+ijsbergsla
+kappertjes
+kapucijner
+kervel
+knoflook
+knolselderij
+komkommer
+koolraap
+koolrabi
+mais
+okra
+olijven
+paksoi
+paprika
+pastinaak
+peterselie
+peultjes
+pompoen
+postelein
+prei
+rabarber
+radijs
+rammenas
+rode biet
+rode kool
+romanesco
+rucola
+savooiekool
+schorseneren
+selderij
+sjalotten
+sla
+snijbiet
+snijbonen
+sperziebonen
+spinazie
+spitskool
+spruiten
+taugé
+tomaten
+tuinkers
+ajuin
+veldsla
+venkel
+waterkers
+witloof
+witte kool
+wortelen
+yam
+zeekraal
+zoete aardappel
+zuurkool
+nori
+
+FRUITS
+granaatappel
+jackfruit
+aalbessen
+aardbeien
+abrikozen
+ananas
+appel
+avocado
+banaan
+bergamot
+bosbessen
+bloedsinaasappel
+bramen
+cactusvijg
+canataloupe
+kumquat
+citroen
+veenbessen
+dadels
+druiven
+frambozen
+kaki
+kersen
+kiwi's
+kweepeer
+limoen
+lotusvrucht
+lychee
+mandarijn
+mango
+meloen
+nachipeer
+nectarine
+papaja
+passievrucht
+peren
+perzik
+pompelmoes
+pruimen
+rozenbottel
+sinaasappel
+stervrucht
+vijgen
+vlierbessen
+moerbei
+watermeloen
+
+NUTS
+amandelen
+cashews
+pistachenoten
+pecannoten
+macadamia-noten
+paranoten
+pinda's
+walnoten
+hazelnoten
+kastanjes
+
+SEEDS
+pijnboompitten
+kokosnoot
+zonnebloempitten
+lijnzaad
+cacao
+pompoenpitten
+chiazaad
+maanzaad
+sesamzaad
+hennepzaad
+lotuszaden
+
+LEGUMES
+sojabonen
+groene linzen
+mungbonen
+kikkererwten
+zwarte bonen
+limabonen
+bruine bonen
+black eyed peas
+pinto bonen
+rode linzen
+zwarte linzen
+cannellini bonen
+witte bonen
+borlotti bonen
+tuinbonen
+flageolets
+chili bonen
+bruine linzen
+franse linzen
+gele linzen
+gele spliterwten
+groene spliterwten
+
+GRAINS
+amarant
+gerst
+boekweit
+bulgur
+farro
+spelt
+gierst
+havermout
+quinoa
+rijst
+rogge
+wilde rijst
+bruine rijst
+zemelen
+bulgur
+couscous
+orzo
+maisgriesmeel
+tarwegriesmeel
+
+SPICES
+anijs
+laurier
+basilicum
+bergamot
+komijn
+mosterd
+peper
+karwij
+kardemom
+cayenne
+cichorei
+koriander
+gember
+mierikswortel
+lavendel
+citroengras
+zoethout
+nootmuskaat
+oregano
+rozemarijn
+saffraan
+steranijs
+munt
+dragon
+tijm
+kurkuma
+vanille
+wasabi
+

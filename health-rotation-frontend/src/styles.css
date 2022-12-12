@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --base-color: #99CCFF;
+  --base-no-color: #D3D3D3;
+  --pop-color: #AF125A;
+  --secondary-color: #576490;
+  --tertiary-color: #274060;
+}
+
+body {
+  font: normal 12px Verdana, Arial, sans-serif;
+}
+
+.button {
+  background: var(--secondary-color);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  margin-top: 20px;
+}

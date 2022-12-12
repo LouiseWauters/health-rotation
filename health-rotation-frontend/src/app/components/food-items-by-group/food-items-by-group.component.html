@@ -1,0 +1,4 @@
+<app-food-item-list *ngFor="let foodItemList of items"
+                    [foodItemList]="foodItemList"
+                    (selected)="changeSelected($event)">
+</app-food-item-list>

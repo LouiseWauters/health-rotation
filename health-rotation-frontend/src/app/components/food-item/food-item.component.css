@@ -1,0 +1,16 @@
+.chip {
+  border-radius: 20px;
+  background: var(--base-no-color);
+  padding: 7px 14px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.chip.selected {
+  background: var(--base-color);
+}
+
+.chip:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
