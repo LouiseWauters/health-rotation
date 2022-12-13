@@ -10,7 +10,7 @@ import {FoodItemComponent} from "../food-item/food-item.component";
 })
 export class FoodItemListComponent implements OnInit {
 
-  @Input() foodItemList: FoodItemList = {title: '', foodItems: [], selected: []};
+  @Input() foodItemList: FoodItemList = {name: '', food_items: [], selected: []};
   @Output() selected = new EventEmitter();
 
   @ViewChildren(FoodItemComponent) children!: QueryList<FoodItemComponent>;
@@ -21,8 +21,8 @@ export class FoodItemListComponent implements OnInit {
   }
 
   changeSelected(foodItem: FoodItem) {
-    this.foodItemList.selected = this.toggleStringInList(foodItem, this.foodItemList.selected);
-    this.selected.emit({title: this.foodItemList.title, selected: this.foodItemList.selected});
+    this.foodItemList.selected = this.toggleStringInList(foodItem, this.foodItemList.selected!);
+    this.selected.emit({title: this.foodItemList.name, selected: this.foodItemList.selected});
   }
 
   toggleStringInList(item: FoodItem, list: FoodItem[]) {

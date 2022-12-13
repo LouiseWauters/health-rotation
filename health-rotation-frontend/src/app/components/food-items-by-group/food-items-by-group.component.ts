@@ -25,16 +25,17 @@ export class FoodItemsByGroupComponent implements OnInit {
   }
 
   changeSelected(object: any) {
-    this.items.filter(obj => obj.title == object.title).map(obj => obj.selected = object.selected);
+    this.items.filter(obj => obj.name == object.title).map(obj => obj.selected = object.selected);
     this.selectedItems.emit(this.selected);
   }
 
   sortFoodItemList() {
-    this.items.forEach(itemList => itemList.foodItems.sort((a, b) => a.name.localeCompare(b.name)));
+    this.items.forEach(itemList => itemList.food_items.sort((a, b) => a.name.localeCompare(b.name)));
   }
 
   getFoodItems() {
     this.foodService.getItemsByGroup().subscribe(data => {
+      data.forEach(obj => obj.selected = []);
       this.items = data;
       this.sortFoodItemList();
       this.itemsLoaded.emit(true);
@@ -50,6 +51,6 @@ export class FoodItemsByGroupComponent implements OnInit {
   }
 
   get selected() : FoodItem[] {
-    return this.items.map(obj => obj.selected).flat(1);
+    return this.items.map(obj => obj.selected!).flat(1);
   }
 }

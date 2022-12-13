@@ -2,7 +2,7 @@ import {FoodItemList} from "../models/food-item-list";
 
 export const FOOD_ITEMS: FoodItemList[] = [
   {
-    title: 'Vegetables', foodItems: [
+    name: 'Vegetables', food_items: [
       {name: 'aardappel'},
       {name: 'aardpeer'},
       {name: 'alfalfa'},
@@ -25,7 +25,6 @@ export const FOOD_ITEMS: FoodItemList[] = [
       {name: 'cassave'},
       {name: 'chilipeper'},
       {name: 'chinese kool'},
-      {name: 'citroengras'},
       {name: 'courgette'},
       {name: 'erwten'},
       {name: 'eikenbladsla'},
@@ -84,10 +83,15 @@ export const FOOD_ITEMS: FoodItemList[] = [
       {name: 'zoete aardappel'},
       {name: 'zuurkool'},
       {name: 'nori'},
+      {name: 'witte champignons'},
+      {name: 'bruine champignons'},
+      {name: 'oesterzwam'},
+      {name: 'shiitake'},
+      {name: 'portobello'}
     ], selected: []
   },
   {
-    title: 'Fruits', foodItems: [
+    name: 'Fruits', food_items: [
       {name: 'granaatappel'},
       {name: 'jackfruit'},
       {name: 'aalbessen'},
@@ -97,7 +101,6 @@ export const FOOD_ITEMS: FoodItemList[] = [
       {name: 'appel'},
       {name: 'avocado'},
       {name: 'banaan'},
-      {name: 'bergamot'},
       {name: 'bosbessen'},
       {name: 'bloedsinaasappel'},
       {name: 'bramen'},
@@ -137,7 +140,7 @@ export const FOOD_ITEMS: FoodItemList[] = [
     ], selected: []
   },
   {
-    title: 'Nuts', foodItems: [
+    name: 'Nuts', food_items: [
       {name: 'amandelen'},
       {name: 'cashews'},
       {name: 'pistachenoten'},
@@ -151,7 +154,7 @@ export const FOOD_ITEMS: FoodItemList[] = [
     ], selected: []
   },
   {
-    title: 'Seeds', foodItems: [
+    name: 'Seeds', food_items: [
       {name: 'pijnboompitten'},
       {name: 'kokosnoot'},
       {name: 'zonnebloempitten'},
@@ -166,7 +169,7 @@ export const FOOD_ITEMS: FoodItemList[] = [
     ], selected: []
   },
   {
-    title: 'Legumes', foodItems: [
+    name: 'Legumes', food_items: [
       {name: 'sojabonen'},
       {name: 'groene linzen'},
       {name: 'mungbonen'},
@@ -192,11 +195,10 @@ export const FOOD_ITEMS: FoodItemList[] = [
     ], selected: []
   },
   {
-    title: 'Grains', foodItems: [
+    name: 'Grains', food_items: [
       {name: 'amarant'},
       {name: 'gerst'},
       {name: 'boekweit'},
-      {name: 'bulgur'},
       {name: 'farro'},
       {name: 'spelt'},
       {name: 'gierst'},
@@ -215,7 +217,7 @@ export const FOOD_ITEMS: FoodItemList[] = [
     ], selected: []
   },
   {
-    title: 'Spices', foodItems: [
+    name: 'Spices', food_items: [
       {name: 'anijs'},
       {name: 'laurier'},
       {name: 'basilicum'},

@@ -1,5 +1,5 @@
 <div *ngIf="ready; else noForm">
-  <app-food-item-list [foodItemList]="{title: 'Recommendations', foodItems: items, selected: []}" (selected)="changeSelected($event)"></app-food-item-list>
+  <app-food-item-list [foodItemList]="{name: 'Recommendations', food_items: items, selected: []}" (selected)="changeSelected($event)"></app-food-item-list>
 </div>
 <ng-template #noForm>
   <app-load-spinner></app-load-spinner>

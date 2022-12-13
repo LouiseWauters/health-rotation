@@ -10,6 +10,7 @@ import { EatingEventFormComponent } from './components/eating-event-form/eating-
 import { LoadSpinnerComponent } from './components/load-spinner/load-spinner.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { RecommendationsComponent } from './components/recommendations/recommendations.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecommendationsComponent } from './components/recommendations/recommend
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

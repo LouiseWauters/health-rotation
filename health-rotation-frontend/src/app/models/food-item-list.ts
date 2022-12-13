@@ -1,7 +1,7 @@
 import {FoodItem} from "./food-item";
 
 export interface FoodItemList {
-  title: string;
-  foodItems: FoodItem[];
-  selected: FoodItem[];
+  name: string;
+  food_items: FoodItem[];
+  selected?: FoodItem[];
 }
