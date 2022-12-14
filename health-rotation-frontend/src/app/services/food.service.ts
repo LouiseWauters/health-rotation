@@ -4,8 +4,6 @@ import {FOOD_ITEMS} from "../mock-data/mock-items";
 import {Observable, of} from "rxjs";
 import {EatingEvent} from "../models/eating-event";
 import {FoodItem} from "../models/food-item";
-import {RECOMMENDATIONS} from "../mock-data/mock-recommendations";
-import {EATING_EVENTS} from "../mock-data/mock-eating-events";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {API_URL} from "../env";
 
@@ -34,7 +32,6 @@ export class FoodService {
   }
 
   postEatingEvents(date: Date, foodItemIds: number[]) {
-    console.log(date);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -55,7 +52,6 @@ export class FoodService {
   }
 
   getEatingEvents(date: Date): Observable<EatingEvent[]> {
-    console.log(date.toString())
     const httpOptions = {
       params: new HttpParams()
         .set('date', date.toString())

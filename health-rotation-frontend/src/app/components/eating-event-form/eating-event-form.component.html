@@ -7,6 +7,7 @@
     <button *ngIf="ready" class="button" type="submit">Submit</button>
     <button class="button" type="button" (click)="clearSelected()">Clear</button>
     <button class="button" type="button" [routerLink]="'recommendations'">Recommendations</button>
+    <p *ngIf="successMessage" class="green">Success!</p>
   </div>
 </form>
 

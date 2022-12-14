@@ -129,7 +129,7 @@ def add_eating_events():
             .filter(or_(FoodItem.last_eaten < date, FoodItem.last_eaten == None))\
             .update({FoodItem.last_eaten: date}, synchronize_session=False)
     session.commit()
-    return make_response(f'Added {date} for {food_item_ids}.', 201)
+    return jsonify({'message': f'Added {date} for {food_item_ids}.'}), 201
 
 
 @food_blueprint.route('/eating-events', methods=['DELETE'])
@@ -156,6 +156,6 @@ def remove_eating_events():
             item.last_eaten = None
     session.commit()
     session.close()
-    return make_response(f'Deleted {date} for {food_item_ids}', 200)
+    return jsonify({'message': f'Deleted {date} for {food_item_ids}.'}), 204
 
 
