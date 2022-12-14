@@ -10,14 +10,12 @@ def handle_crud(f):
             return f(*args, **kwargs)
         except ValueError:
             error_message = "Rating must fall in range [0, 10]."
-        except (NoResultFound, KeyError) as e:
+        except (NoResultFound, KeyError):
             error_message = "Object does not exist."
-            print(e)
         except (NameError, IntegrityError):
             error_message = "Ingredient name already exists."
-        except Exception as e:
+        except Exception:
             error_message = "Something went wrong."
-            print(e)
         return make_response(error_message, 400)
 
     return decorated

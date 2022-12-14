@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields
 from sqlalchemy import Column, Date, Integer, ForeignKey
 from sqlalchemy.orm import relationship
+from sqlalchemy.schema import UniqueConstraint
 
 from src.entities.entity import Base, Entity
 
@@ -11,6 +12,8 @@ class EatingEvent(Entity, Base):
     date = Column(Date)
     food_item_id = Column(Integer, ForeignKey('food_items.id'), nullable=False)
     food_item = relationship('FoodItem', back_populates='eaten')
+
+    __table_args__ = (UniqueConstraint('date', 'food_item_id'),)
 
     def __init__(self, date, food_item_id):
         Entity.__init__(self)

@@ -1,4 +1,8 @@
 <h3>{{foodItemList.name}}</h3>
 <div id="{{foodItemList.name}}FoodItemList" class="food-item-container">
-  <app-food-item *ngFor="let item of foodItemList.food_items" [foodItem]="item" (wasSelected)="changeSelected($event)"></app-food-item>
+  <app-food-item *ngFor="let item of foodItemList.food_items"
+                 [foodItem]="item"
+                 [mean]="foodItemList.mean!"
+                 [std]="foodItemList.std!"
+                 (wasSelected)="changeSelected($event)"></app-food-item>
 </div>

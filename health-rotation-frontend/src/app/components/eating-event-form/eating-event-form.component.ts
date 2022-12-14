@@ -39,14 +39,24 @@ export class EatingEventFormComponent implements OnInit {
       const selected_ids = this.selectedItems.map(obj => obj.id!);
       const item_ids_to_delete = this.differenceList(old_selected_ids, selected_ids);
       const item_ids_to_add = this.differenceList(selected_ids, old_selected_ids);
-      this.foodService.postEatingEvents(date, item_ids_to_add).subscribe(data => {
-        this.successMeter += 1;
-        this.successMessage = this.successMeter == 2;
-      });
-      this.foodService.deleteEatingEvents(date, item_ids_to_delete).subscribe(data => {
-        this.successMeter += 1;
-        this.successMessage = this.successMeter == 2;
-      });
+      this.successMeter += (item_ids_to_add.length == 0 ? 1 : 0) + (item_ids_to_delete.length == 0 ? 1 : 0);
+      this.successMessage = this.successMeter == 2;
+      if (item_ids_to_add.length > 0) {
+        this.foodService.postEatingEvents(date, item_ids_to_add).subscribe(data => {
+          this.successMeter += 1;
+          this.successMessage = this.successMeter == 2;
+          // Add added values to the old list (so that they don't get added again)
+          this.old_selected_items.push(...this.selectedItems.filter(obj => item_ids_to_add.indexOf(obj.id!) > -1));
+        });
+      }
+      if (item_ids_to_delete.length > 0) {
+        this.foodService.deleteEatingEvents(date, item_ids_to_delete).subscribe(data => {
+          this.successMeter += 1;
+          this.successMessage = this.successMeter == 2;
+          // Remove deleted values from the old list (so that they don't get deleted again)
+          this.old_selected_items = this.old_selected_items.filter(obj => item_ids_to_delete.indexOf(obj.id!) < 0);
+        });
+      }
     }
   }
 

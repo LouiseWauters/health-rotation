@@ -4,4 +4,6 @@ export interface FoodItemList {
   name: string;
   food_items: FoodItem[];
   selected?: FoodItem[];
+  mean?: number;
+  std?: number;
 }

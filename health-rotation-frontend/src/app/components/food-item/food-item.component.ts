@@ -10,6 +10,9 @@ export class FoodItemComponent implements OnInit {
 
   @Input() foodItem: FoodItem = {name: ''};
   @Input() selected = false;
+
+  @Input() mean = 0;
+  @Input() std = 0;
   @Output() wasSelected = new EventEmitter();
 
   constructor() {}
@@ -33,5 +36,17 @@ export class FoodItemComponent implements OnInit {
     if (index >= 0 && !this.selected) {
       this.changeSelected();
     }
+  }
+  get frequent() {
+    if (this.mean == 0 || this.foodItem.eaten === undefined) {
+      return 0
+    }
+    if (this.foodItem.eaten.length > this.mean + this.std) {
+      return 1
+    }
+    if (this.foodItem.eaten.length < this.mean - this.std) {
+      return -1
+    }
+    return 0
   }
 }

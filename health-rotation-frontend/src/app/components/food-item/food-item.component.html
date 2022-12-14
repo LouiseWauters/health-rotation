@@ -1,1 +1,2 @@
-<div [ngClass]="{'chip': true, 'selected': selected}" (click)="changeSelected()">{{foodItem.name}}</div>
+<div [ngClass]="{'chip': true, 'selected': selected, 'frequent': frequent > 0, 'not-frequent': frequent < 0}"
+     (click)="changeSelected()">{{foodItem.name}}</div>
