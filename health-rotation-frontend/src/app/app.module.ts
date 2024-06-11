@@ -11,6 +11,7 @@ import { LoadSpinnerComponent } from './components/load-spinner/load-spinner.com
 import {ReactiveFormsModule} from "@angular/forms";
 import { RecommendationsComponent } from './components/recommendations/recommendations.component';
 import {HttpClientModule} from "@angular/common/http";
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     FoodItemsByGroupComponent,
     EatingEventFormComponent,
     LoadSpinnerComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

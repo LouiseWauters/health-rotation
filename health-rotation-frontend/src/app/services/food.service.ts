@@ -31,6 +31,10 @@ export class FoodService {
     return this.http.get<FoodItem[]>(`${API_URL}/recommendations`, httpOptions);
   }
 
+  getStatistics(): Observable<{ date: string, count: number }[]> {
+    return this.http.get<{ date: string, count: number }[]>(`${API_URL}/rolling-sum-statistics`);
+  }
+
   postEatingEvents(date: Date, foodItemIds: number[]) {
     const httpOptions = {
       headers: new HttpHeaders({

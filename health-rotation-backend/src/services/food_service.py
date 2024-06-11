@@ -88,7 +88,7 @@ def get_recommendations():
                     extract('year', func.age(FoodItem.last_eaten)) > 0,
                     FoodItem.last_eaten == None))\
         .order_by(nullsfirst(desc(FoodItem.last_eaten)))\
-        .limit(limit*30)
+        .limit(limit*5)
 
     schema = FoodItemSchema(many=True)
     food_items = schema.dump(food_item_objects)
@@ -159,3 +159,42 @@ def remove_eating_events():
     return jsonify({'message': f'Deleted {date} for {food_item_ids}.'}), 204
 
 
+@food_blueprint.route('/rolling-sum-statistics', methods=['GET'])
+@handle_crud
+def get_rolling_sum_statistics():
+    """This function returns the rolling sum of distinct food items for the last 7 days
+    for every date in the database.
+
+    It only counts fruits, vegetables, nuts and legumes."""
+    limit = request.args.get('limit', default=90, type=int)
+    session = Session()
+    date_counts = session.execute(
+        f"""
+        with recursive date_sequence as (
+            select min(date) as date
+            from eating_events
+            union all
+            select (date + interval '1' day)::DATE
+            from date_sequence
+            where date + interval '1' day <= greatest(current_date, (select max(date) from eating_events))
+        ),
+        filtered_events as (
+            select distinct date, fi.id
+            from food_items fi
+            join food_categories fc
+            on fi.food_category_id = fc.id
+            join eating_events ee
+            on ee.food_item_id = fi.id
+            where fc.name in ('Vegetables', 'Fruits', 'Nuts', 'Legumes')
+        )
+        select ds.date, (
+            select count(distinct id)
+            from filtered_events fe
+            where fe.date between ds.date - interval '6' day and ds.date
+        ) as rolling_distinct_count_last_7_days
+        from date_sequence ds
+        order by ds.date desc limit {limit};
+        """
+    )
+    session.close()
+    return jsonify([{'date': str(date), 'count': count} for date, count in date_counts]), 200

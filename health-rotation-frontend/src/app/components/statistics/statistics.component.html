@@ -1,0 +1,19 @@
+<h1>{{headerText | uppercase }}</h1>
+<div [ngClass]="{'hidden': statistics === undefined}">
+  <div class="calendar" id="calendar">
+    <ng-container *ngFor="let day of calendarDays">
+      <div class="day" [ngClass]="{'header': day.isHeader, 'today': day.isToday}">
+        <div class="date-number">{{day.label}}</div>
+        <div [ngClass]="{'day-content': true, 'muted': day.content === '?' || day.content === 0, 'bold-colored-text': day.content !== undefined && day.content >= 20}" >{{day.content}}</div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div *ngIf="statistics === undefined">
+  <app-load-spinner></app-load-spinner>
+</div>
+<div class="button-container">
+  <button class="button" [routerLink]="''">Back</button>
+  <button class="button" (click)="previousMonth()"><</button>
+  <button class="button" (click)="nextMonth()">></button>
+</div>

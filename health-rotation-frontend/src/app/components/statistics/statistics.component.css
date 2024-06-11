@@ -1,0 +1,56 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  width: 80%;
+  max-width: 1200px;
+}
+.day {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100px;
+  font-size: 1.5em;
+}
+
+.today {
+  background-color: #ccd0dd;
+}
+
+.header {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.date-number {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0.75em;
+  color: #888;
+}
+
+.day-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  color: #000;
+}
+
+.muted {
+  color: #888;
+}
+
+.bold-colored-text {
+  color: #576490;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
