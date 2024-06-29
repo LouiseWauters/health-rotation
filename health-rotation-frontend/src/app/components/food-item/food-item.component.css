@@ -19,6 +19,10 @@
   background-color: #c4c4e2;
 }
 
+.chip.recent {
+  opacity: 0.5;
+}
+
 .chip.frequent.selected, .chip.not-frequent.selected, .chip.selected {
   background-color: var(--base-color);
 }

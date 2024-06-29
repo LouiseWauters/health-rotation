@@ -49,4 +49,17 @@ export class FoodItemComponent implements OnInit {
     }
     return 0
   }
+
+  addDays(date: Date, days: number) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return d
+  }
+
+  get recent() {
+    if (this.foodItem.last_eaten === undefined) {
+      return false
+    }
+    return new Date(this.foodItem.last_eaten) > this.addDays(new Date(), -7)
+  }
 }
