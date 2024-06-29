@@ -1,11 +1,11 @@
+from datetime import date
 from marshmallow import Schema, fields
+from marshmallow.decorators import post_dump
 from sqlalchemy import Column, String, Date, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 
-from src.entities.entity import Base, Entity
 from src.entities.eating_event import EatingEventSchema
-
-from datetime import date
+from src.entities.entity import Base, Entity
 
 
 class FoodItem(Entity, Base):
@@ -35,3 +35,9 @@ class FoodItemSchema(Schema):
         if obj.last_eaten:
             return (date.today() - obj.last_eaten).days
         return None
+
+    @post_dump
+    def sort_eaten(self, data, **kwargs):
+        if 'eaten' in data:
+            data['eaten'] = sorted(data['eaten'])
+        return data
