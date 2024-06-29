@@ -4,7 +4,7 @@
     <ng-container *ngFor="let day of calendarDays">
       <div class="day" [ngClass]="{'header': day.isHeader, 'today': day.isToday}">
         <div class="date-number">{{day.label}}</div>
-        <div [ngClass]="{'day-content': true, 'muted': day.content === '?' || day.content === 0, 'bold-colored-text': day.content !== undefined && day.content >= 20}" >{{day.content}}</div>
+        <div [ngClass]="{'day-content': true, 'muted': day.content === '?' || day.content === 0, 'bold-colored-text': day.content !== undefined && day.content >= 25}" >{{day.content}}</div>
       </div>
     </ng-container>
   </div>
