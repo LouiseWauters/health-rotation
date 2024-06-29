@@ -41,10 +41,10 @@ export class FoodItemComponent implements OnInit {
     if (this.mean == 0 || this.foodItem.eaten === undefined) {
       return 0
     }
-    if (this.foodItem.eaten.length > this.mean + this.std) {
+    if (this.foodItem.eaten.length >= this.mean + this.std) {
       return 1
     }
-    if (this.foodItem.eaten.length < this.mean - this.std) {
+    if (this.foodItem.eaten.length <= Math.max(this.mean - this.std, 0)) {
       return -1
     }
     return 0
