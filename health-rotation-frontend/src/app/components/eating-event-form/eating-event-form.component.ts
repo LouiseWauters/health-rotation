@@ -74,6 +74,10 @@ export class EatingEventFormComponent implements OnInit {
   }
 
   setEatingEvents(date: Date) {
+    if (!date) {
+      this.clearSelected();
+      return;
+    }
     this.foodService.getEatingEvents(date).subscribe(data => {
       this.clearSelected();
       this.selectItems(data.map(obj => obj.food_item));
