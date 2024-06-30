@@ -176,7 +176,10 @@ def get_rolling_sum_statistics():
             union all
             select (date + interval '1' day)::DATE
             from date_sequence
-            where date + interval '1' day <= greatest(current_date, (select max(date) from eating_events))
+            where date + interval '1' day <= greatest(
+                (current_date + interval '7' day)::DATE, 
+                (select max(date) from eating_events)
+            )
         ),
         filtered_events as (
             select distinct date, fi.id
