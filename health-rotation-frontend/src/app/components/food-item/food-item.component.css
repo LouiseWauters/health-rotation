@@ -23,6 +23,7 @@
   opacity: 0.5;
 }
 
-.chip.frequent.selected, .chip.not-frequent.selected, .chip.selected {
+.chip.frequent.selected, .chip.not-frequent.selected, .chip.selected, .chip.recent.selected {
   background-color: var(--base-color);
+  opacity: 1;
 }
