@@ -177,7 +177,7 @@ def get_rolling_sum_statistics():
             select (date + interval '1' day)::DATE
             from date_sequence
             where date + interval '1' day <= greatest(
-                (current_date + interval '7' day)::DATE, 
+                (current_date + interval '6' day)::DATE, 
                 (select max(date) from eating_events)
             )
         ),
